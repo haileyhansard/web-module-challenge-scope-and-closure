@@ -131,8 +131,15 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function scoreboard(inning, inningNumber) { // stuck on Task #4 here
+  for (let i = 0; i < inningNumber; i++){
+    let currentInning = getInningScore(inning);
+    homeScore = homeScore + currentInning.home;
+    awayScore = awayScore + currentInning.away;
+    scoreByInning.push('inning ${i+1}:Away ${currentInning.away} - Home${currentInning.home}')
 
+  }
+  return scoreByInning;
+}
+console.log(scoreboard(getInningScore, inning, 9));
 
