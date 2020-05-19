@@ -1,5 +1,8 @@
 // ⭐️ Example Challenge START ⭐️
 
+
+console.log('Hello world');
+
 /**
  * ### Challenge `processFirstItem`
  * 
@@ -18,6 +21,8 @@ function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
 
+// processFirstItem();
+
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -28,10 +33,17 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
- * 2. Which of the two uses a closure? How can you tell?
+ * Counter1's variable count has block scope. The variable count is declared inside the block of code in the function counterMaker, and it cannot leave/be accessed outside because its inside the curly brackets. 
+ * There is another function called "counter" inside the first function.  
+ *
+ * However, in counter2, the variable count is declared outisde the function, so it has global scope and can be accessed from anywhere in the program.
+ * 
+ *  2. Which of the two uses a closure? How can you tell?
+ * counter1 uses a closure. I can tell because it is a function that returns a 2nd function.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *counter1 would be preferable if you only need to access the variable count inside the function.
+ counter2 would be better if you need to access count outside the function.
 */
 
 // counter1 code
@@ -56,15 +68,24 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
 
-    /*Code Here*/
 
+function inning(){
+  let randomPoints = Math.round(Math.random() * 2);
+  return (randomPoints);
 }
+
+inning();
+
+let score = inning();
+console.log(score);
+
 
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` 
+(from above) and a number of innings and and returns the final score of the game 
+in the form of an object.
 
 For example, 
 
@@ -76,11 +97,18 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, inningNumber){
+  let homePoints = 0;
+  let awayPoints = 0;
+  for (let i = 0; i < inningNumber; i++){
+    homePoints = homePoints + inning();
+    awayPoints = awayPoints + inning();
+  };
 
-  /*Code Here*/
+return {"home": homePoints, "away": awayPoints}
+};
 
-}
+console.log(finalScore(inningNumber,9));
 
 /* Task 4: 
 
