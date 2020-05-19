@@ -108,7 +108,7 @@ function finalScore(inning, inningNumber){
 return {"home": homePoints, "away": awayPoints}
 };
 
-console.log(finalScore(inningNumber,9));
+console.log(finalScore(inning,9));
 
 /* Task 4: 
 
