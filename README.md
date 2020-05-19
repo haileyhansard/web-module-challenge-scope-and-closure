@@ -42,6 +42,10 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closure is the ability for a child function to access variables from a higher level scope even after the variables have been called or closed. The information can be passed down, but not back up.
+
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +67,15 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+There is a child function inside the higher level function called personalDice. I can tell because it has () and there is a block of code after it.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+What is the same: "Dan rolled a"
+What changes: the random number that follows "Dan rolled a" which is created by the Math.random function
+
 c. What is the lexical scope of `newRoll`? 
+'newRoll' has access to the variables of its parent scope, so it has access to only the information it is assigned to in this case.
+
 
 ### Task 3 - Stretch Goals
 
